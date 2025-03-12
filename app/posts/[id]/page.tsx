@@ -1,4 +1,4 @@
-import { getPostData, getSortedPostsData } from '@/lib/posts';
+import { getPostData, getSortedPostsData, PostData } from '@/lib/posts';
 import Link from 'next/link';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
-  return posts.map((post) => ({
+  return posts.map((post: PostData) => ({
     id: post.id,
   }));
 }

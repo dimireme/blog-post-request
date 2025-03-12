@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getSortedPostsData } from '@/lib/posts';
+import { getSortedPostsData, PostData } from '@/lib/posts';
 
 export default function Home() {
   const posts = getSortedPostsData();
@@ -8,7 +8,7 @@ export default function Home() {
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">Мой блог</h1>
       <div className="grid gap-6">
-        {posts.map((post) => (
+        {posts.map((post: PostData) => (
           <article key={post.id} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <Link href={`/posts/${post.id}`}>
               <h2 className="text-2xl font-semibold mb-2 hover:text-blue-600">{post.title}</h2>
