@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/blog-post-request',
+  // Используем basePath только в production
+  basePath: process.env.NODE_ENV === 'production' ? '/blog-post-request' : '',
 }
 
 module.exports = nextConfig 
