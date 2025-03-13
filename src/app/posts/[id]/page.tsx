@@ -1,7 +1,15 @@
 import Link from 'next/link'
-import { getPostData } from '@/lib/posts'
+import { getPostData, getAllPosts } from '@/lib/posts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faCalendar } from '@fortawesome/free-solid-svg-icons'
+
+// Генерируем статические пути для всех постов
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
+    id: post.id,
+  }))
+}
 
 export default async function Post({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id)
