@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Post Request
+
+A Next.js application that generates a list of blog posts from Markdown files in the `content/posts` directory.
+
+## Demo
+
+[View on GitHub Pages](https://dimireme.github.io/blog-post-request/)
+
+## Features
+
+- Generates blog posts from `.md` files in `content/posts` directory
+- Modern UI with Tailwind CSS
+- Responsive design
+- GitHub Pages deployment
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- GitHub Pages
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/blog-post-request.git
+cd blog-post-request
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is configured for deployment on GitHub Pages. The deployment is handled automatically through GitHub Actions when changes are pushed to the main branch.
 
-## Learn More
+### Manual Deployment
 
-To learn more about Next.js, take a look at the following resources:
+If you need to deploy manually:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Build the project:
+```bash
+npm run build
+# or
+yarn build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Export static files:
+```bash
+npm run export
+# or
+yarn export
+```
 
-## Deploy on Vercel
+3. Push to the `gh-pages` branch:
+```bash
+git push origin gh-pages
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+blog-post-request/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   └── layout.tsx
+│   └── components/
+│       ├── BlogPost.tsx
+│       └── PostForm.tsx
+├── public/
+├── styles/
+│   └── globals.css
+├── next.config.js
+├── package.json
+└── README.md
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+<a href="https://dimireme.github.io/blog-post-request/" target="_blank">
+github pages 
+</a>
+
+Генерирует список статей по `.md` файлам из `~/content/pages`
