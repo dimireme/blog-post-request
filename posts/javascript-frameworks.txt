@@ -1,0 +1,83 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+5:I[9665,[],"OutletBoundary"]
+8:I[9665,[],"ViewportBoundary"]
+a:I[9665,[],"MetadataBoundary"]
+c:I[6614,[],""]
+:HL["/blog-post-request/_next/static/media/26a46d62cd723877-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog-post-request/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog-post-request/_next/static/css/45fc478f652a8d43.css","style"]
+0:{"P":null,"b":"zr2iHwMzdUDO-mI7Vacf-","p":"/blog-post-request","c":["","posts","javascript-frameworks"],"i":false,"f":[[["",{"children":["posts",{"children":[["id","javascript-frameworks","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog-post-request/_next/static/css/45fc478f652a8d43.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ru","children":["$","body",null,{"className":"__className_8fd459 bg-white dark:bg-gray-900 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-8","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["id","javascript-frameworks","d"],["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L4","$undefined",null,["$","$L5",null,{"children":["$L6","$L7",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","5UuFaOtBueJCmCecd9z3w",{"children":[["$","$L8",null,{"children":"$L9"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$La",null,{"children":"$Lb"}]]}],false]],"m":"$undefined","G":["$c","$undefined"],"s":false,"S":true}
+d:I[6874,["874","static/chunks/874-db6e9370384cd204.js","880","static/chunks/app/posts/%5Bid%5D/page-98230f9d8e0fa577.js"],""]
+e:Tb0f,<h1>Современные JavaScript фреймворки</h1>
+<p>В мире веб-разработки JavaScript фреймворки играют ключевую роль в создании современных приложений. Давайте рассмотрим наиболее популярные решения и их особенности.</p>
+<h2>React</h2>
+<p>React, разработанный Facebook, остается одним из самых популярных фреймворков благодаря:</p>
+<ul>
+<li>Виртуальному DOM</li>
+<li>Компонентному подходу</li>
+<li>Большому сообществу</li>
+<li>Богатой экосистеме</li>
+</ul>
+<pre><code class="language-jsx">function Welcome({ name }) {
+  return &#x3C;h1>Привет, {name}!&#x3C;/h1>;
+}
+</code></pre>
+<h2>Vue.js</h2>
+<p>Vue.js известен своей простотой и гибкостью:</p>
+<ul>
+<li>Плавная кривая обучения</li>
+<li>Реактивность из коробки</li>
+<li>Отличная документация</li>
+<li>Интеграция с существующими проектами</li>
+</ul>
+<pre><code class="language-vue">&#x3C;template>
+  &#x3C;div>
+    &#x3C;h1>{{ message }}&#x3C;/h1>
+  &#x3C;/div>
+&#x3C;/template>
+
+&#x3C;script>
+export default {
+  data() {
+    return {
+      message: 'Привет, Vue!'
+    }
+  }
+}
+&#x3C;/script>
+</code></pre>
+<h2>Next.js</h2>
+<p>Next.js, построенный на React, предлагает:</p>
+<ul>
+<li>Серверный рендеринг (SSR)</li>
+<li>Статическую генерацию (SSG)</li>
+<li>Автоматическую оптимизацию</li>
+<li>Встроенную маршрутизацию</li>
+</ul>
+<pre><code class="language-typescript">// pages/index.tsx
+export default function Home() {
+  return (
+    &#x3C;main>
+      &#x3C;h1>Добро пожаловать в Next.js!&#x3C;/h1>
+    &#x3C;/main>
+  );
+}
+</code></pre>
+<h2>Выбор фреймворка</h2>
+<p>При выборе фреймворка стоит учитывать:</p>
+<ol>
+<li>Требования проекта</li>
+<li>Опыт команды</li>
+<li>Размер сообщества</li>
+<li>Производительность</li>
+<li>Экосистему инструментов</li>
+</ol>
+<h2>Заключение</h2>
+<p>Каждый фреймворк имеет свои сильные стороны и лучше всего подходит для определенных сценариев использования. Важно выбирать инструмент, который наилучшим образом соответствует требованиям вашего проекта и навыкам команды.</p>
+4:["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","div",null,{"className":"mb-8","children":["$","$Ld",null,{"href":"/","className":"inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 no-underline","children":[["$","svg",null,{"aria-hidden":"true","focusable":"false","data-prefix":"fas","data-icon":"arrow-left","className":"svg-inline--fa fa-arrow-left w-4 h-4 mr-2","role":"img","xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 448 512","style":{},"ref":"$undefined","children":["$","path",null,{"fill":"currentColor","d":"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z","style":{}}]}],"Назад к списку"]}]}],["$","h1",null,{"className":"mb-4","children":"Современные JavaScript фреймворки"}],["$","div",null,{"className":"flex items-center text-gray-600 dark:text-gray-400 mb-8","children":[["$","svg",null,{"aria-hidden":"true","focusable":"false","data-prefix":"fas","data-icon":"calendar","className":"svg-inline--fa fa-calendar w-4 h-4 mr-2","role":"img","xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 448 512","style":{},"ref":"$undefined","children":["$","path",null,{"fill":"currentColor","d":"M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z","style":{}}]}],["$","time",null,{"children":"2024-03-21"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$e"}}]]}]
+9:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:null
+7:null
+b:[["$","title","0",{"children":"Мой блог"}],["$","meta","1",{"name":"description","content":"Блог о веб-разработке и технологиях"}],["$","link","2",{"rel":"icon","href":"/blog-post-request/favicon.ico","type":"image/x-icon","sizes":"16x16"}]]
