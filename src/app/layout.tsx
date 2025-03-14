@@ -2,6 +2,8 @@ import './global.css'
 import { Inter } from 'next/font/google'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Header from '@/components/Header'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 config.autoAddCss = false
 
@@ -18,11 +20,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen`}>
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          {children}
-        </div>
+        <ThemeProvider>
+          <div className="max-w-4xl mx-auto px-4">
+            <Header />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

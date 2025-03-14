@@ -6,7 +6,6 @@ export default async function Home() {
 
   return (
     <main>
-      <h1 className="text-4xl font-bold mb-8 text-gradient">Мой блог</h1>
       <div className="grid gap-6">
         {posts.map((post) => (
           <Link 
