@@ -8,6 +8,7 @@ import MarkdownEditor from '@/components/MarkdownEditor'
 import MarkdownPreview from '@/components/MarkdownPreview'
 import PreviewModeToggle, { PreviewMode } from '@/components/PreviewModeToggle'
 import MarkdownHelp from '@/components/MarkdownHelp'
+import AuthBanner from '@/components/AuthBanner'
 
 type PostFormData = {
   title: string;
@@ -53,6 +54,7 @@ export default function SubmitPage() {
   return (
     <div className="w-full">
       <h1 className="text-3xl font-bold mb-6">Предложить статью</h1>
+      <AuthBanner />
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="title" className="block text-sm font-medium mb-1">
