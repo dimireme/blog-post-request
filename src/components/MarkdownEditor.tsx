@@ -1,5 +1,3 @@
-import MarkdownHelp from './MarkdownHelp'
-
 type MarkdownEditorProps = {
   content: string;
   onChange: (content: string) => void;
@@ -15,7 +13,6 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
         className="w-full px-3 py-2 border rounded-lg h-[500px] dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300"
         required
       />
-      <MarkdownHelp />
     </div>
   )
 } 

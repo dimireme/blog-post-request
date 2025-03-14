@@ -7,6 +7,7 @@ import html from 'remark-html'
 import MarkdownEditor from '@/components/MarkdownEditor'
 import MarkdownPreview from '@/components/MarkdownPreview'
 import PreviewModeToggle, { PreviewMode } from '@/components/PreviewModeToggle'
+import MarkdownHelp from '@/components/MarkdownHelp'
 
 type PostFormData = {
   title: string;
@@ -91,8 +92,9 @@ export default function SubmitPage() {
               }`}
             >
               <div className="flex items-center justify-between h-8 mb-1">
-                <label htmlFor="content" className="block text-sm font-medium">
+                <label htmlFor="content" className="block text-sm font-medium flex items-center">
                   Содержание (Markdown)
+                  <MarkdownHelp />
                 </label>
                 {previewMode === 'hidden' && (
                   <PreviewModeToggle mode={previewMode} onToggle={togglePreview} />

@@ -1,26 +1,23 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
+
 export default function MarkdownHelp() {
   return (
-    <details className="mt-2 text-sm">
-      <summary className="cursor-pointer text-purple-600 hover:text-purple-700">
-        Показать справку по Markdown
-      </summary>
-      <div className="mt-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg space-y-3">
-        <h4 className="font-semibold">Базовый синтаксис Markdown:</h4>
-        <ul className="space-y-2">
-          <li><code className="px-1"># Заголовок</code> - Заголовок первого уровня</li>
-          <li><code className="px-1">## Заголовок</code> - Заголовок второго уровня</li>
-          <li><code className="px-1">**текст**</code> - <strong>Жирный текст</strong></li>
-          <li><code className="px-1">*текст*</code> - <em>Курсив</em></li>
-          <li><code className="px-1">[текст](url)</code> - Ссылка</li>
-          <li><code className="px-1">- элемент</code> - Маркированный список</li>
-          <li><code className="px-1">1. элемент</code> - Нумерованный список</li>
-          <li><code className="px-1">\`код\`</code> - Строка кода</li>
-          <li>
-            <code className="px-1">```<br/>блок кода<br/>```</code> - Блок кода
-          </li>
-          <li><code className="px-1">{'>'} текст</code> - Цитата</li>
+    <div className="group relative inline-block">
+      <FontAwesomeIcon 
+        icon={faCircleQuestion} 
+        className="w-4 h-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 cursor-help ml-1" 
+      />
+      <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-4 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow-lg z-10">
+        <ul className="text-sm space-y-1">
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded"># Заголовок</code></li>
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">**жирный**</code></li>
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">*курсив*</code></li>
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">[ссылка](url)</code></li>
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">- список</code></li>
+          <li><code className="text-xs bg-gray-100 dark:bg-gray-700 px-1 rounded">\`код\`</code></li>
         </ul>
       </div>
-    </details>
+    </div>
   )
 } 
