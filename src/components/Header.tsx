@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle'
 export default function Header() {
   const pathname = usePathname()
   const isHomePage = pathname === '/'
+  const isSubmitPage = pathname === '/submit'
 
   return (
     <header className="flex items-center justify-between py-6 mb-8">
@@ -19,7 +20,17 @@ export default function Header() {
           </Link>
         )}
       </div>
-      <ThemeToggle />
+      <div className="flex items-center gap-4">
+        {!isSubmitPage && (
+          <Link 
+            href="/submit" 
+            className="btn btn-primary"
+          >
+            Предложить статью
+          </Link>
+        )}
+        <ThemeToggle />
+      </div>
     </header>
   )
 } 
