@@ -18,25 +18,25 @@ export default async function Post(props: { params: Params }) {
   const postData = await getPostData(params.id)
 
   return (
-    <article className="prose prose-lg dark:prose-invert max-w-none">
-      <div className="mb-8">
+    <article>
+      <div className="flex items-center justify-between mb-8">
         <Link 
           href="/"
-          className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 no-underline"
+          className="inline-flex items-center text-purple-600 hover:text-purple-800 no-underline"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 mr-2" />
           Назад к списку
         </Link>
+        
+        <div className="flex items-center text-gray-600">
+          <FontAwesomeIcon icon={faCalendar} className="w-4 h-4 mr-2" />
+          <time>{postData.date}</time>
+        </div>
       </div>
 
-      <h1 className="mb-4">{postData.title}</h1>
-      
-      <div className="flex items-center text-gray-600 dark:text-gray-400 mb-8">
-        <FontAwesomeIcon icon={faCalendar} className="w-4 h-4 mr-2" />
-        <time>{postData.date}</time>
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </div>
-
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </article>
   )
 } 

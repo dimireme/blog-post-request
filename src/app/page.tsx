@@ -14,11 +14,11 @@ export default async function Home() {
             href={`/posts/${post.id}`}
             className="card p-6 no-underline"
           >
-            <h2 className="text-2xl font-semibold mb-2 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+            <h2 className="text-2xl font-semibold mb-2 hover:text-purple-600 transition-colors">
               {post.title}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">{post.date}</p>
-            <p className="text-gray-800 dark:text-gray-200">{post.excerpt}</p>
+            <p className="text-gray-600 mb-4">{post.date}</p>
+            <p>{post.excerpt}</p>
           </Link>
         ))}
       </div>

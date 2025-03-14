@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,12 +5,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #030712;
     --foreground: #ededed;
+    --card-background: #1f2937;
   }
 }
 
@@ -22,84 +22,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer base {
-  body {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-
-  /* Улучшенная типографика для статей */
-  .prose {
-    @apply text-gray-900 dark:text-gray-100;
-  }
-
-  .prose h1, .prose h2, .prose h3, .prose h4 {
-    @apply text-gray-900 dark:text-gray-100 font-bold;
-  }
-
-  .prose h1 {
-    @apply text-3xl md:text-4xl mb-8;
-  }
-
-  .prose h2 {
-    @apply text-2xl md:text-3xl mt-12 mb-6;
-  }
-
-  .prose h3 {
-    @apply text-xl md:text-2xl mt-8 mb-4;
-  }
-
-  .prose p {
-    @apply mb-6 leading-relaxed;
-  }
-
-  .prose ul {
-    @apply my-6 list-disc list-inside;
-  }
-
-  .prose ol {
-    @apply my-6 list-decimal list-inside;
-  }
-
-  .prose li {
-    @apply mb-2;
-  }
-
-  .prose a {
-    @apply text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors;
-  }
-
-  .prose blockquote {
-    @apply pl-4 border-l-4 border-purple-500 dark:border-purple-400 italic my-6;
-  }
-
-  .prose code {
-    @apply px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-sm;
-  }
-
-  .prose pre {
-    @apply p-4 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-x-auto my-6;
-  }
-
-  .prose pre code {
-    @apply bg-transparent p-0;
-  }
-
-  .prose img {
-    @apply rounded-lg shadow-lg my-8;
-  }
-}
-
 @layer components {
   .btn {
     @apply px-4 py-2 rounded-lg transition-all duration-200;
   }
 
   .btn-primary {
-    @apply bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600;
+    @apply bg-purple-600 text-white hover:bg-purple-700;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300;
+    background: var(--card-background);
+    @apply rounded-xl shadow-md hover:shadow-xl transition-all duration-300;
   }
 }
 
