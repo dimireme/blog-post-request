@@ -25,7 +25,7 @@ A Next.js application that generates a list of blog posts from Markdown files in
 ### Prerequisites
 
 - Node.js 18.0 or later
-- npm or yarn
+- Yarn 1.22.0 or later
 
 ### Installation
 
@@ -37,15 +37,11 @@ cd blog-post-request
 
 2. Install dependencies:
 ```bash
-npm install
-# or
 yarn install
 ```
 
 3. Run the development server:
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -61,15 +57,11 @@ If you need to deploy manually:
 
 1. Build the project:
 ```bash
-npm run build
-# or
 yarn build
 ```
 
 2. Export static files:
 ```bash
-npm run export
-# or
 yarn export
 ```
 
