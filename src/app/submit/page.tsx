@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { getGitHubAuthUrl, saveFormState } from '@/lib/auth'
 import MarkdownEditor from '@/components/MarkdownEditor'
 import MarkdownPreview from '@/components/MarkdownPreview'
 import PreviewModeToggle, { PreviewMode } from '@/components/PreviewModeToggle'
@@ -36,9 +37,16 @@ export default function SubmitPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement GitHub PR creation
-    console.log('Form submitted:', formData)
-    router.push('/')
+    
+    // Сохраняем данные формы
+    saveFormState(formData)
+
+    // Генерируем случайное состояние для безопасности
+    const state = Math.random().toString(36).substring(7)
+    
+    // Получаем URL для авторизации и перенаправляем пользователя
+    const authUrl = getGitHubAuthUrl(state)
+    router.push(authUrl)
   }
 
   const togglePreview = () => {
