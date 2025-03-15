@@ -5,10 +5,13 @@ const GITHUB_OAUTH_URL = 'https://github.com/login/oauth/authorize'
 // Эти значения нужно будет получить после регистрации OAuth приложения
 const GITHUB_CLIENT_ID = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID || ''
 
+// Определяем basePath в зависимости от окружения
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/blog-post-request' : ''
+
 export function getGitHubAuthUrl(state: string) {
   const params = new URLSearchParams({
     client_id: GITHUB_CLIENT_ID,
-    redirect_uri: `${window.location.origin}/auth/callback`,
+    redirect_uri: `${window.location.origin}${BASE_PATH}/auth/callback`,
     scope: 'public_repo',
     state,
     allow_signup: 'true',

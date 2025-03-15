@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Настройки для GitHub Pages
+  // Если вы используете basePath для GitHub Pages
   basePath: process.env.NODE_ENV === 'production' ? '/blog-post-request' : '',
   // Используем тот же путь для статических файлов
   assetPrefix: process.env.NODE_ENV === 'production' ? '/blog-post-request/' : '',

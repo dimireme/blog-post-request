@@ -30,6 +30,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
+        env:
+          NEXT_PUBLIC_GITHUB_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GH_CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.GH_APP_SECRET }}
         run: yarn build
 
       - name: Create .nojekyll file
