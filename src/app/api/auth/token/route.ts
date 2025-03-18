@@ -26,7 +26,7 @@ export async function POST(request: Request) {
         client_secret: CLIENT_SECRET,
         code,
       }),
-    })
+    }) 
 
     const data = await response.json()
 
