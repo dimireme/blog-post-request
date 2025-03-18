@@ -101,7 +101,7 @@ export default function AuthCallbackContent() {
         }
         action={{
           label: 'Вернуться на главную',
-          onClick: () => router.push('/?status=success')
+          onClick: () => router.push('/')
         }}
       />
     )
