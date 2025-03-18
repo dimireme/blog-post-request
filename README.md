@@ -1,6 +1,34 @@
 # Blog Post Request
 
-A Next.js application that generates a list of blog posts from Markdown files in the `content/posts` directory.
+A Next.js application for submitting blog posts through GitHub pull requests.
+
+## Environment Variables
+
+Before running the application, you need to set up your environment variables:
+
+1. Create a GitHub OAuth App at https://github.com/settings/developers
+2. Copy `.env.example` to `.env.local`
+3. Fill in your GitHub OAuth App credentials:
+   - `NEXT_PUBLIC_GITHUB_CLIENT_ID`: Your GitHub OAuth App Client ID
+   - `GITHUB_CLIENT_SECRET`: Your GitHub OAuth App Client Secret
+
+For production deployment on Vercel:
+1. Add these environment variables in your Vercel project settings
+2. Update the OAuth App settings with your production URLs:
+   - Homepage URL: `https://your-app.vercel.app`
+   - Authorization callback URL: `https://your-app.vercel.app/auth/callback`
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Demo
 
