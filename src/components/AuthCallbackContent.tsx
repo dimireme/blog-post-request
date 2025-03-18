@@ -5,11 +5,13 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { getAccessToken, getFormState, clearFormState } from '@/lib/auth'
 import { generatePostFile } from '@/lib/generatePostFile'
 import { createPullRequest } from '@/lib/github'
+import LoadingScreen from './LoadingScreen'
 
 export default function AuthCallbackContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [error, setError] = useState<string>()
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function handleCallback() {
@@ -51,6 +53,8 @@ export default function AuthCallbackContent() {
       } catch (err) {
         console.error('Auth callback error:', err)
         setError(err instanceof Error ? err.message : 'Authentication failed')
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -59,20 +63,24 @@ export default function AuthCallbackContent() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">
-            Ошибка авторизации
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">{error}</p>
-          <button
-            onClick={() => router.push('/submit')}
-            className="btn btn-primary"
-          >
-            Вернуться к форме
-          </button>
-        </div>
-      </div>
+      <LoadingScreen
+        title="Ошибка авторизации"
+        message={error}
+        error
+        action={{
+          label: 'Вернуться к форме',
+          onClick: () => router.push('/submit')
+        }}
+      />
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <LoadingScreen
+        title="Обработка авторизации..."
+        message="Пожалуйста, подождите..."
+      />
     )
   }
 
