@@ -18,21 +18,40 @@ export function getGitHubAuthUrl(state: string) {
 }
 
 export async function getAccessToken(code: string): Promise<string> {
-  const response = await fetch('/api/auth/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ code }),
-  })
+  try {
+    console.log('Requesting access token with code:', code)
+    
+    const response = await fetch('/api/auth/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ code }),
+    })
 
-  const data = await response.json()
-  
-  if (!response.ok) {
-    throw new Error(data.message || 'Failed to get access token')
+    const data = await response.json()
+    
+    console.log('Token response:', {
+      status: response.status,
+      statusText: response.statusText,
+      hasError: !!data.message,
+      errorMessage: data.message,
+      hasAccessToken: !!data.access_token,
+    })
+    
+    if (!response.ok) {
+      throw new Error(data.message || `Failed to get access token: ${response.status} ${response.statusText}`)
+    }
+
+    if (!data.access_token) {
+      throw new Error('No access token received from server')
+    }
+
+    return data.access_token
+  } catch (error) {
+    console.error('Error getting access token:', error)
+    throw error
   }
-
-  return data.access_token
 }
 
 // Хранение состояния формы во время авторизации
