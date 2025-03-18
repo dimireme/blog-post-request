@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import Posts from '@/components/Posts'
 
 export default function HomePage() {
