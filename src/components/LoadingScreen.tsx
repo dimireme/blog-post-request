@@ -1,6 +1,6 @@
 type LoadingScreenProps = {
   title: string;
-  message: string;
+  message: React.ReactNode;
   error?: boolean;
   action?: {
     label: string;

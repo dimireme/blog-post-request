@@ -12,6 +12,7 @@ export default function AuthCallbackContent() {
   const searchParams = useSearchParams()
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
+  const [prUrl, setPrUrl] = useState<string>()
 
   useEffect(() => {
     async function handleCallback() {
@@ -35,7 +36,7 @@ export default function AuthCallbackContent() {
         const { content, filename } = generatePostFile(formData)
 
         // Создаем PR
-        const prUrl = await createPullRequest({
+        const url = await createPullRequest({
           title: formData.title,
           content,
           filename,
@@ -45,11 +46,8 @@ export default function AuthCallbackContent() {
         // Очищаем сохраненные данные
         clearFormState()
 
-        // Открываем PR в новой вкладке
-        window.open(prUrl, '_blank')
-
-        // Перенаправляем на главную с сообщением об успехе
-        router.push('/?status=success')
+        // Сохраняем URL PR
+        setPrUrl(url)
       } catch (err) {
         console.error('Auth callback error:', err)
         setError(err instanceof Error ? err.message : 'Authentication failed')
@@ -80,6 +78,31 @@ export default function AuthCallbackContent() {
       <LoadingScreen
         title="Обработка авторизации..."
         message="Пожалуйста, подождите..."
+      />
+    )
+  }
+
+  if (prUrl) {
+    return (
+      <LoadingScreen
+        title="Статья успешно отправлена!"
+        message={
+          <>
+            Pull request создан и доступен по ссылке:{' '}
+            <a 
+              href={prUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300 underline"
+            >
+              {prUrl}
+            </a>
+          </>
+        }
+        action={{
+          label: 'Вернуться на главную',
+          onClick: () => router.push('/?status=success')
+        }}
       />
     )
   }
